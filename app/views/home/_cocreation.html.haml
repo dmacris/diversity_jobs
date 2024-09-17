@@ -1,0 +1,89 @@
+.row.justify-content-center.p-2#cocreation
+  .col-12.gy-6.gy-md-5
+  .col-12.col-sm-12.col-lg-5
+    .row.justify-content-center
+      .cocreation-gif.col-12.order-lg-2.gy-md-3
+        =image_tag 'illustration/launching.gif', :class => 'cocreation-gif'      
+      .col-12.gy-4.text-center.title-commom.order-lg-1
+        Como funciona nossa co
+        %span.text-warning>.
+        criação? 
+      %a.text-decoration-none.order-lg-3.mt-md-3{ :href => 'https://calendly.com/api2bee', :target => '_blank', :class => 'chat-button chat-button-desktop'}
+        Marque um bate-papo
+        =image_tag 'icons/calendar-days.png', :class => 'calendar-image-size'
+
+  .cards-container.col-12.col-sm-12.col-lg-5.gy-4
+    .mt-4.cocreation-card-general.show-answer.change-circle
+      .cocreation-card-number.p-2
+        1
+      .cocreation-card
+        .cards-title.cocreation-cards-title
+          %span.cards-question-text
+            Mapeamento
+          .arrows-container
+            %span.expand
+              +
+            %span.close
+              ='-'
+        .cards-answer-text.cocreation-cards-answer-text
+          %span
+            Nesta etapa, sua empresa conta com um time de especialistas em produtos,
+            UX e seguros para identificar as oportunidades de distribuição de seguros
+            dentro do seu negócio.
+
+    .mt-4.cocreation-card-general
+      .cocreation-card-number.p-2
+        2
+      .cocreation-card
+        .cards-title.cocreation-cards-title
+          %span.cards-question-text
+            Proposta
+          .arrows-container
+            %span.expand
+              +
+            %span.close
+              ='-'
+        .cards-answer-text.cocreation-cards-answer-text
+          %span
+            Enviamos um plano de ação para implementação do produto único e
+            exclusivo de seguro criado para o seu negócio.
+
+    .mt-4.cocreation-card-general
+      .cocreation-card-number.p-2
+        3
+      .cocreation-card
+        .cards-title.cocreation-cards-title
+          %span.cards-question-text
+            Implementação
+          .arrows-container
+            %span.expand
+              +
+            %span.close
+              ='-'
+        .cards-answer-text.cocreation-cards-answer-text
+          %span
+            Depois, reduzindo as burocracias da contratação com tecnologia e I.A.,
+            vamos implementar o seguro com uma solução Low-code ou uma API.
+    
+    .mt-4.cocreation-card-general
+      .cocreation-card-number.p-2
+        4
+      .cocreation-card
+        .cards-title.cocreation-cards-title
+          %span.cards-question-text
+            Mensuração
+          .arrows-container
+            %span.expand
+              +
+            %span.close
+              ='-'
+        .cards-answer-text.cocreation-cards-answer-text
+          %span
+            ='A cada 30 dias, vamos analisar os '
+            %a{ :href => '#', :target => '_blank' }> OKRs
+            =' traçados para gerar novos insights visando uma melhoria continua da solução implementada.'
+
+  .col-12.mt-4.mt-md-5
+    %a.text-decoration-none{ :href => 'https://calendly.com/api2bee', :target => '_blank', :class => 'chat-button'}
+      Marque um bate-papo
+      =image_tag 'icons/calendar-days.png', :class => 'calendar-image-size'

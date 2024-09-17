@@ -1,0 +1,254 @@
+.gradient-head
+  .container-fluid
+    .row.justify-content-center.p-2
+      .col-12.gy-6.gy-md-9.a2b-title
+        Vamos co.criar uma proteção para o seu
+        %br
+        %span.animated-title
+    .row.justify-content-center.p-2
+      .col-12.gy-3
+        %a.text-decoration-none{ :href => 'https://calendly.com/api2bee', :target => '_blank', :class => 'chat-button'}
+          Marque um bate-papo
+          =image_tag 'icons/calendar-days.png', :class => 'calendar-image-size'
+    .row.justify-content-center.p-2
+      .col-12.gy-6.gy-md-9.text-center.title-commom#introduction
+        Bem vindo a Api2Bee!
+    .row.justify-content-center.p-2
+      .col-12.gy-md-4.text-center.text-commom
+        Hey, muito prazer! A
+        %strong
+          Api2Bee Seguros
+        ='é uma '
+        %a{ :href => '#faq', :onclick => "showInsurtechCard();" }> Insurtech
+        = ' de '
+        %a{ :href => '#faq', :onclick => "showEmbeddedInsuranceCard();" }> Embedded Insurance
+        =' que surgiu para mudar a forma como os seguros são distribuídos aqui no Brasil.'
+        %br
+        %br
+        Os seguros estão se tornando fortes aliados de empresas, aumentando seus faturamentos e
+        surpreendendo seus clientes e parceiros.
+        %br
+        %br
+        E junto com você, vamos mapear as dores e oportunidades do seu negócio para entregar mais
+        valor e segurança no momento certo! Vamos lá?
+
+.body-commom
+
+  .container-fluid
+    .row.justify-content-center.p-2
+      .col-12.text-center.gy-6.gy-md-5.title-commom
+        Surpreenda os seus clientes
+
+      .col-12.gy-4.slider-container
+        .slider-wrapper
+          .slider-content
+            .content-card
+              .image
+                =image_tag 'illustration/Work time.gif', :class => 'surprise-clients-image', :alt => 'work-time'
+              .card-text
+                .title
+                  + LTV
+                .paragraph
+                  Conquiste a confiança do seu cliente e aumente seu tempo de
+                  permanência e sua receita média.
+            .content-card
+              .image
+                =image_tag 'illustration/Piggy bank.gif', :class => 'surprise-clients-image', :alt => 'piggy-bank'
+              .card-text
+                .title
+                  + Ticket Médio
+                .paragraph
+                  Aumente o ticket médio incluindo produtos relevantes no momento
+                  certo de compra.
+            .content-card
+              .image
+                =image_tag 'illustration/Journey.gif', :class => 'surprise-clients-image', :alt => 'journey'
+              .card-text
+                .title
+                  ='- Churn'
+                .paragraph
+                  Aumente a retenção de clientes oferecendo serviços que eles
+                  precisam durante a própria jornada.
+            .content-card
+              .image
+                =image_tag 'illustration/Good team.gif', :class => 'surprise-clients-image', :alt => 'good-team'
+              .card-text              
+                .title
+                  + NPS
+                .paragraph
+                  Melhore a satisfação do seu cliente adicionando seguros e
+                  garantias aos seus produtos.
+
+    =render partial: "cocreation"
+
+    .row.justify-content-center.p-2#after-buy
+      .col-12.gy-6.gy-md-5.text-center.title-commom
+        Mas... e depois do cliente comprar o seguro?    
+    .row.justify-content-center.p-2
+      .col-12.gy-1.text-center.text-commom
+        %strong Todo pós-venda
+        do seguro é por nossa conta! Contamos com um time de 
+        %strong Suporte Expert
+        no assunto de seguros para atender qualquer demanda após a compra.
+        %br
+        %br
+        A Api2Bee também possui
+        %strong parcerias com as maiores e mais confiáveis seguradoras
+        do mercado brasileiro.
+        Por isso, em caso de acionamento do seguro, um parceiro designado previamente
+        arcará com a indenização do cliente ou parceiro.
+
+    .row.justify-content-center.p-2#partners
+      .col-12.gy-6.gy-md-5.text-center.title-commom
+        Parceiros & Investidores
+      .partner-container.col-12.gy-4
+        %button{ class:'arrow-left control-slider', 'aria-label': 'Previous Image'}
+          %i{ :class => 'fas fa-caret-left'}
+        %button{ class:'arrow-right control-slider','aria-label': 'Next Image'}
+          %i{ :class => 'fas fa-caret-right'}
+        .slider-wrapper
+          .slider-content
+            =image_tag 'partners/Sulamerica.png', :class => 'partner-image', :alt => 'sulamerica'
+            =image_tag 'partners/Porto.png', :class => 'partner-image', :alt => 'porto'
+            =image_tag 'partners/Pottencial.png', :class => 'partner-image', :alt => 'pottencial'
+            =image_tag 'partners/Liberty.png', :class => 'partner-image', :alt => 'liberty'
+            =image_tag 'partners/Bradesco.png', :class => 'partner-image', :alt => 'bradesco'
+            =image_tag 'partners/Allianz.png', :class => 'partner-image', :alt => 'allianz'
+            =image_tag 'partners/HDI.png', :class => 'partner-image', :alt => 'hdi'
+            =image_tag 'partners/Tokio.png', :class => 'partner-image', :alt => 'tokio'
+            =image_tag 'partners/Sompo.png', :class => 'partner-image', :alt => 'sompo'
+            =image_tag 'partners/Mapfre.png', :class => 'partner-image', :alt => 'mapfre'
+            =image_tag 'partners/Zurich.png', :class => 'partner-image', :alt => 'zurich'
+            =image_tag 'partners/Suhai.png', :class => 'partner-image', :alt => 'suhai'
+
+    .row.justify-content-center.p-2#team
+      .col-12.gy-6.gy-md-5
+      .col-12.text-center.order-md-2.col-md-4.a2b-title.my-auto
+        Quem compõe nossa cool
+        %span.text-warning>.
+        meia?
+      .team-cards.col-12.gy-4.gy-md-5.order-md-1.col-md-4
+        .cards.col-12.p-2#bruno
+          .photo
+            =image_tag 'team/bruno.png', :class => 'card-img'
+          .informations.p-2
+            .linkedin
+              %a{ :href => 'https://www.linkedin.com/in/bruno-omena-1b243110b/', :target => '_blank' }
+                =image_tag 'icons/linkedin-blue.png', :class => 'linkedin'
+            .name
+              Bruno Omena
+            .role
+              CEO & Data Scientist
+        .cards.col-12.p-2#daniel
+          .photo
+            =image_tag 'team/daniel.png', :class => 'card-img'
+          .informations.p-2
+            .linkedin
+              %a{ :href => 'https://www.linkedin.com/in/dcmacris/', :target => '_blank' }
+                =image_tag 'icons/linkedin-blue.png', :class => 'linkedin'
+            .name
+              Daniel Macris
+            .role
+              CTO & Software Engineer
+        .cards.col-12.p-2#kadu
+          .photo
+            =image_tag 'team/kadu.png', :class => 'card-img'
+          .informations.p-2
+            .linkedin
+              %a{ :href => 'https://www.linkedin.com/in/kaduyanki/', :target => '_blank' }
+                =image_tag 'icons/linkedin-blue.png', :class => 'linkedin'
+            .name
+              Kadu Yanki
+            .role
+              CPO & Product Designer
+
+    .row.justify-content-center.p-2#sectors
+      .col-12.gy-6.gy-md-5.text-center.title-commom
+        Quais setores podem vender seguros?    
+    .row.justify-content-center.p-2
+      .col-12.gy-2.text-center.text-commom
+        Fintechs, BigTechs, eCommerces, Varejo, empresas do ramo imobiliário,
+        prestadores de serviços, concessionárias e empresas do setor automotivo.
+        %br
+        %br
+        Resumindo: Negócios que estão procurando aumentar seu faturamento e
+        melhorar a experiência do cliente por meio da oferta de seguros.
+      .col-12.gy-3.gy-md-5
+        %a.text-decoration-none{ :href => 'https://calendly.com/api2bee', :target => '_blank', :class => 'chat-button'}
+          Marque um bate-papo
+          =image_tag 'icons/calendar-days.png', :class => 'calendar-image-size'
+
+.gradient-bottom
+  .container-fluid
+    .row.p-2.bottom-faq
+      =render partial: "shared/faq"
+
+  :javascript
+    //Title
+    document.addEventListener('DOMContentLoaded', () => {
+      new TypeIt(".animated-title", {
+        speed: 200,
+        loop: true
+      }).type("negócio?", {delay: 900}).delete(8)
+      .type("cliente?", {delay: 900}).delete(8)
+      .type("produto?", {delay: 900}).delete(8)
+      .go()
+    })
+
+    //Partners
+    const controls = document.querySelectorAll('.control-slider');
+    let currentPartner = 0;
+    const partners = document.querySelectorAll('.partner-image');
+    const maxPartners = partners.length;
+    controls.forEach((control) => {
+      control.addEventListener('click', () => {
+        const isLeft = control.classList.contains('arrow-left');        
+        if (isLeft) {
+          currentPartner -= 1;
+        }
+        else {
+          currentPartner += 1;
+        }
+        if (currentPartner >= maxPartners) {
+          currentPartner = 0;
+        }
+        if (currentPartner < 0 ){
+          currentPartner = maxPartners - 1;
+        }
+        partners[currentPartner].scrollIntoView({
+          inline: "center",
+          behavior: "smooth",
+          block: "nearest"
+        });
+      })
+    })
+
+    //Cocreation Card
+    const cocreationCard = document.querySelectorAll('.cocreation-card-general');
+    cocreationCard.forEach(function(item) {
+      item.addEventListener('click', function(e) {
+        const parent = e.currentTarget;
+        parent.classList.toggle('show-answer');
+
+        parent.classList.toggle('change-circle');
+      })
+    })
+
+    //FAQ Card
+    const faqCard = document.querySelectorAll('.faq-card');
+    faqCard.forEach(function(item) {
+      item.addEventListener('click', function(e) {
+        const parent = e.currentTarget;
+        parent.classList.toggle('show-answer');
+      })
+    })
+  
+    function showInsurtechCard() {
+      const insurtechCard = document.querySelector('#insurtech');
+      insurtechCard.click();
+    }
+
+    function showEmbeddedInsuranceCard() {
+      const insurtechCard = document.querySelector('#embeddedinsurance');
+      insurtechCard.click();
+    }

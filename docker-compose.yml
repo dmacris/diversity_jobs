@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  app:
+    stdin_open: true
+    tty: true
+    build:
+      context: ./docker
+      dockerfile: Dockerfile
+      args:
+        GID: ${GID:-1000}
+        UID: ${UID:-1000}
+    depends_on:
+      - postgres
+    ports:
+      - "${SERVICE_PORT:-3010}:${SERVICE_PORT:-3010}"
+    volumes:
+      - .:/home/developer/app
+      - gem_cache:/home/developer/bundle
+    environment:
+      - RAILS_ENV=${RAILS_ENV:-development}
+      - BUNDLE_PATH=/home/developer/bundle
+      - HISTFILE=/home/developer/app/log/.bash_history
+      - WAIT_FOR=postgres:5432
+      - WAIT_FOR_TIMEOUT=${WAIT_FOR_TIMEOUT:-30}
+      - PG_USR=postgres
+      - PG_HOSTNAME=postgres
+      - PG_PWD=${PG_PWD:-localPassword123}
+    command: bundle exec rails s -p ${SERVICE_PORT:-3010} -b 0.0.0.0
+
+  postgres:
+    image: postgres:12.1
+    volumes:
+      - postgres:/var/lib/postgresql/data
+      - ./postgreslog:/root/log:cached
+    environment:
+      PSQL_HISTFILE: /root/log/.psql_history
+      POSTGRES_PASSWORD: ${PG_PWD:-localPassword123}
+
+volumes:
+  postgres:
+  gem_cache:
+
+networks:
+  default:
+    external:
+      name: manual_default

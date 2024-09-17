@@ -1,0 +1,76 @@
+%header.col-12
+  %nav.nav-bar
+    .logo
+      =image_tag 'logo.png', :class => 'logo-img-header'
+    .nav-list
+      %ul.my-auto
+        %li.nav-item
+          %a.text-decoration-none.nav-link{ :href => '#cocreation' }
+            Co.criação
+        %li.nav-item
+          %a.text-decoration-none.nav-link{ :href => '#partners' }
+            Parceiros
+        %li.nav-item
+          %a.text-decoration-none.nav-link{ :href => 'blog.api2bee.com.br', :target => '_blank' }
+            Blog
+        %li.nav-item
+          %a.text-decoration-none.nav-link{ :href => '#faq' }
+            FAQ
+        %li.nav-item
+          %a.text-decoration-none.nav-link{ :href => 'https://calendly.com/api2bee', :target => '_blank', :class => 'chat-button'}
+            Marque um bate-papo
+            =image_tag 'icons/calendar-days.png', :class => 'calendar-image-size'
+
+    .mobile-menu-icon.my-auto
+      %button{ :onclick => "menuShow();" }
+        %i{ :class => 'icon-menu fa-solid fa-bars'}
+
+  .mobile-menu
+    %ul
+      %li.nav-item
+        %button{ :onclick => "menuClose();" }
+          %a.text-decoration-none.nav-link{ :href => '#cocreation' }
+            Co.criação
+      %li.nav-item
+        %button{ :onclick => "menuClose();" }
+          %a.text-decoration-none.nav-link{ :href => '#partners' }
+            Parceiros
+      %li.nav-item
+        %button{ :onclick => "menuClose();" }
+          %a.text-decoration-none.nav-link{ :href => '#' }
+            Blog
+      %li.nav-item
+        %button{ :onclick => "menuClose();" }
+          %a.text-decoration-none.nav-link{ :href => '#faq' }
+            FAQ
+      %li.nav-item
+        %button{ :onclick => "menuClose();" }
+          %a.text-decoration-none.nav-link{ :href => 'https://calendly.com/api2bee', :target => '_blank', :class => 'chat-button'}
+            Marque um bate-papo
+            =image_tag 'icons/calendar-days.png', :class => 'calendar-image-size'
+
+
+:javascript
+
+  function menuShow() {
+    let menuMobile = document.querySelector('.mobile-menu');
+    if (menuMobile.classList.contains('open-menu')) {
+      menuMobile.classList.remove('open-menu');
+      document.querySelector('.icon-menu').classList.remove('fa-xmark')
+      document.querySelector('.icon-menu').classList.remove('fa-lg')
+      document.querySelector('.icon-menu').classList.add('fa-bars');
+    } else {
+      menuMobile.classList.add('open-menu');
+      document.querySelector('.icon-menu').classList.add('fa-xmark');      
+      document.querySelector('.icon-menu').classList.add('fa-lg');
+      document.querySelector('.icon-menu').classList.remove('fa-bars');
+    }
+  }
+
+  function menuClose() {
+    let menuMobile = document.querySelector('.mobile-menu');
+    menuMobile.classList.remove('open-menu');
+    document.querySelector('.icon-menu').classList.remove('fa-xmark')
+    document.querySelector('.icon-menu').classList.remove('fa-lg')
+    document.querySelector('.icon-menu').classList.add('fa-bars');
+  }

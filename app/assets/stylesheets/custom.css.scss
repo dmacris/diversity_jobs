@@ -1,0 +1,812 @@
+@font-face {
+  font-family: 'Montserrat Alternates';
+  src: url('MontserratAlternates-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Montserrat Alternates Bold';
+  src: url('MontserratAlternates-Bold.ttf');
+}
+
+@font-face {
+  font-family: 'Inconsolata';
+  src: url('Inconsolata-Regular.ttf');
+}
+
+/* header custom css start */
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 1.5rem;
+}
+
+nav .logo {
+  display: flex;
+  align-items: center;
+}
+
+.nav-link {
+  font-family: 'Montserrat Alternates';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 150%;
+  color: #000000;
+}
+
+.logo-img-header {
+  width: 176px;
+  height: auto;
+}
+
+nav .chat-button,
+.mobile-menu .chat-button {
+  width: 222px;
+}
+
+.nav-item {
+  display: none;
+}
+
+.mobile-menu-icon button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 30px;
+}
+
+.mobile-menu-icon {
+  display: block;
+}
+
+.mobile-menu ul {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 0 0 1rem 0;
+}
+
+.mobile-menu .nav-item {
+  display: block;
+  padding-top: 2.5rem;
+}
+
+.mobile-menu button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.mobile-menu {
+  margin-top: -1px;
+  width: 100%;
+  background: #FFF;
+  right: -100%;
+  z-index: 1;
+  position: fixed;
+  transition: 0.5s;
+}
+
+.open-menu {
+  margin-top: -1px;
+  width: 100%;
+  background: #FFF;
+  right: 0;
+  z-index: 1;
+  position: absolute;
+  transition: 0.5s;
+}
+
+/* header custom css end */
+
+/* general css start */
+
+.chat-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 16px;
+  gap: 14px;
+  width: 328px;
+  height: 40px;
+  background: #FFE430;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  margin: auto;
+  /* text */
+  font-family: 'Inconsolata';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 150%;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.calendar-image-size {
+  height: 22px;
+  color: #000000;
+}
+
+.title-commom {
+  font-family: 'Montserrat Alternates Bold';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 120%;
+  color: #000000;
+}
+
+.text-commom {
+  font-family: 'Inconsolata';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #000000;
+}
+
+/* cards */
+.cards-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cards-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  gap: 8px;
+  width: 328px;
+  height: 62px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.cards-question-text {
+  width: 270px;
+  height: 30px;
+  font-family: 'Inconsolata';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 150%;
+  display: flex;
+  align-items: center;
+  color: #000000;
+  padding-left: 12px;
+}
+
+.cards-answer-text {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  gap: 8px;
+  width: 328px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.cards-answer-text span {
+  width: 270px;
+  font-family: 'Inconsolata';
+  font-style: normal;
+  font-size: 16px;
+  line-height: 150%;
+  color: #000000;
+}
+
+.cards-answer-text {
+  display: none;
+}
+
+.cards-title .expand,
+.cards-title .close {
+  width: 24px;
+  height: 24px;
+  font-family: 'Inconsolata';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 150%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #FFB624;
+}
+
+.cards-title .close {
+  display: none;
+}
+
+.show-answer .cards-title {
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.show-answer .close {
+  display: flex;
+}
+
+.show-answer .expand {
+  display: none;
+}
+
+.show-answer .cards-answer-text {
+  display: block;
+}
+
+/* slider */
+.slider-container {
+  position: relative;
+  padding-right: 0 !important;
+  max-width: 100%;
+}
+
+.partner-container {
+  position: relative;
+  padding-right: 0 !important;
+  max-width: 100%;
+}
+
+.partner-container {
+  position: relative;
+  padding-right: 0 !important;
+  max-width: 100%;
+}
+
+.slider-wrapper {
+  overflow-x: auto;
+}
+
+.slider-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.slider-content {
+  display: flex;
+  flex-flow: row nowrap;
+  margin-right: 0px;
+  gap: 16px;
+}
+
+/* general css end */
+
+/* body custom css start */
+.gradient-head {
+  position: relative;
+  width: 100%;
+  height: auto;
+  background: linear-gradient(181.12deg, #FFE430 26.58%, rgba(255, 228, 48, 0) 70%);
+}
+
+.a2b-title {
+  font-family: 'Montserrat Alternates Bold';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 150%;
+  text-align: center;
+  color: #000000;
+}
+
+/* body general */
+.body-commom {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+}
+
+/* surprise your clients session */
+.slider-content .content-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 320px;
+  height: auto;
+  background: #FFFFFF;
+  margin: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.surprise-clients-image {
+  width: 250px;
+  height: auto;
+}
+
+.slider-content .content-card .image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: auto;
+}
+
+.slider-content .content-card .card-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.slider-content .content-card .card-text .title {
+  font-family: 'Montserrat Alternates Bold';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 120%;
+  color: #000000;
+  margin-top: 16px;
+  margin-left: 16px;
+}
+
+.slider-content .content-card .card-text .paragraph {
+  font-family: 'Inconsolata';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #555555;
+  margin: 16px
+}
+
+/* cocreation session */
+.cocreation-gif {
+  width: 328px;
+  margin-bottom: 5px;
+}
+
+.cocreation-card-general {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  cursor: pointer;
+}
+
+#cocreation .chat-button-desktop {
+  display: none;
+}
+
+.cocreation-card-general .cocreation-card-number {
+  font-family: 'Inconsolata';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 150%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  color: #000000;
+  width: 32px;
+  height: 32px;
+  padding: 8px;
+  gap: 8px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 200px;
+  margin-right: 16px;
+  margin-top: 4%;
+}
+
+.change-circle .cocreation-card-number {
+  background: #000;
+  color: #FFE430;
+}
+
+/* partners and investors css */
+.partners-content .partner-image {
+  width: 250px;
+  height: auto;
+}
+
+.arrow-left,
+.arrow-right {
+  display: none;
+}
+
+/* team css */
+.team-cards .cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.team-cards .cards .photo {
+  width: 120px;
+  height: auto;
+}
+
+.team-cards .cards .informations {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 10px;
+  width: 162px;
+}
+
+.team-cards .cards .informations .linkedin {
+  width: 18px;
+  height: auto;
+}
+
+.team-cards .cards .informations .name {
+  font-family: 'Inconsolata';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 150%;
+  color: #000000;
+}
+
+.team-cards .cards .informations .role {
+  font-family: 'Inconsolata';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  color: #000000;
+}
+
+/* faq */
+.gradient-bottom {
+  position: relative;
+  width: 100%;
+  height: auto;
+  background: linear-gradient(181.12deg, #FFE430 26.58%, rgba(255, 228, 48, 0) 100%);
+  transform: rotate(-180deg);
+}
+
+.gradient-bottom .bottom-faq {
+  transform: rotate(180deg);
+}
+
+.faq-card {
+  cursor: pointer;
+}
+
+.bottom-faq a i {
+  height: 22px;
+  line-height: 150%;
+  color: #000000;
+}
+
+/* body custom css end */
+/* pre-footer custom css start */
+.pre-footer {
+  display: flex;
+  flex-direction: column;
+  padding: 24px 16px 24px;
+  gap: 24px;
+  background: #000000;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.resume {
+  font-family: 'Inconsolata';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  display: flex;
+  text-align: left;
+  color: #FFE430;
+}
+
+.prefooter-title {
+  font-family: 'Inconsolata';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 150%;
+  align-items: center;
+  color: #FFE430;
+}
+
+.pre-footer a {
+  font-family: 'Inconsolata';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  display: flex;
+  align-items: center;
+  color: #FFFFFF;
+  margin-bottom: 12px;
+}
+
+.contacts-img-size {
+  width: 15px;
+  filter: invert(100%);
+  -webkit-filter: invert(100%);
+  margin-bottom: 12px;
+  margin-right: 5px;
+}
+
+.pre-footer .flex-col {
+  display: flex;
+  align-items: center;
+}
+
+.social-media-size {
+  width: 24px;
+  filter: invert(100%);
+  -webkit-filter: invert(100%);
+}
+
+/* pre-footer custom css end */
+/* footer custom css start */
+footer {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px 16px;
+  gap: 12px;
+}
+
+.logo-img-footer {
+  width: 176px;
+  height: auto;
+}
+
+.cnpj {
+  font-family: 'Inconsolata';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 150%;
+  text-align: center;
+  color: #000000;
+}
+
+/* footer custom css end */
+/* wip page */
+.wip-body-title {
+  font-family: 'Montserrat Alternates Bold';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 150%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #000000;
+}
+
+.wip-body-social-media-size {
+  width: 20px;
+  margin-right: 12px;
+}
+
+/* wip page */
+/* For responsive typography */
+@media (min-width: 768px) {
+  .wip-body-title {
+    font-size: 20px;
+  }
+
+  .wip-body-social-media-size {
+    width: 40px;
+    margin-right: 20px;
+  }
+
+  .nav-bar {
+    align-items: center;
+    padding: 0.7rem 6rem;
+  }
+
+  .nav-list ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+  }
+
+  nav .nav-item {
+    display: block;
+  }
+
+  .nav-item {
+    margin: 0 15px;
+  }
+
+  .mobile-menu-icon {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+
+  .gradient-head {
+    background: linear-gradient(181.12deg, #FFE430 10%, rgba(255, 228, 48, 0) 100%);
+  }
+
+  .slider-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .partner-container {
+    max-width: 40%;
+  }
+
+  .arrow-left,
+  .arrow-right {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: auto;
+    bottom: 0;
+    font-size: 40px;
+    line-height: 250px;
+    max-width: 40px;
+    color: #000;
+    cursor: pointer;
+    border: none;
+    background: linear-gradient(to left, transparent 0%, #FFE430 200%);
+    opacity: 0.1;
+    transition: all 600ms ease-in-out;
+  }
+
+  .arrow-right {
+    left: auto;
+    right: 0;
+    background: linear-gradient(to right, transparent 0%, #FFE430 200%);
+  }
+
+  .arrow-left:hover,
+  .arrow-right:hover {
+    opacity: 1;
+  }
+}
+
+@media (min-width: 992px) {
+  .chat-button {
+    width: 800px;
+    height: 46px;
+  }
+
+  .text-commom {
+    width: 800px;
+    height: auto;
+  }
+
+  #cocreation .title-commom {
+    top: 10%;
+  }
+
+  #cocreation .chat-button-desktop {
+    width: 663px;
+  }
+
+  .cocreation-card-general .cocreation-card-number {
+    margin-top: 2.5%;
+  }
+
+  #cocreation .chat-button {
+    display: none;
+  }
+
+  #cocreation .chat-button-desktop {
+    display: flex;
+  }
+
+  .faq-cards-title {
+    width: 850px;
+    height: 62px;
+  }
+
+  .cocreation-cards-title {
+    width: 350px;
+    height: 62px;
+  }
+
+  .cards-question-text {
+    width: auto;
+  }
+
+  .faq-cards-answer-text {
+    width: 850px;
+  }
+
+  .cocreation-cards-answer-text {
+    width: 350px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .faq-cards-title {
+    width: 1100px;
+    height: 62px;
+  }
+
+  .cocreation-cards-title {
+    width: 400px;
+    height: 62px;
+  }
+
+  .cards-question-text {
+    width: auto;
+  }
+
+  .faq-cards-answer-text {
+    width: 1100px;
+  }
+
+  .cocreation-cards-answer-text {
+    width: 400px;
+  }
+
+  .team-cards #bruno {
+    margin-left: 90px;
+  }
+
+  .team-cards #daniel {
+    margin-top: -50px;
+    margin-bottom: -50px;
+  }
+
+  .team-cards #kadu {
+    margin-left: 90px;
+  }
+
+  .team-cards .cards .photo {
+    width: 160px;
+  }
+
+  .team-cards .cards .informations {
+    width: 250px;
+  }
+
+  .team-cards .cards .informations .linkedin {
+    width: 26px;
+  }
+
+  .team-cards .cards .informations .name {
+    font-size: 24px;
+  }
+
+  .team-cards .cards .informations .role {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1500px) {
+  .faq-cards-title {
+    width: 1300px;
+    height: 62px;
+  }
+
+  .cocreation-cards-title {
+    width: 530px;
+    height: 62px;
+  }
+
+  .cards-question-text {
+    width: auto;
+  }
+
+  .faq-cards-answer-text {
+    width: 1300px;
+  }
+
+  .cocreation-cards-answer-text {
+    width: 530px;
+  }
+}

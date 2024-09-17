@@ -1,0 +1,51 @@
+FROM ruby:3.2.1-bullseye
+
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash
+RUN apt-get update -qq \
+  && DEBIAN_FRONTEND=noninteractive apt-get install -yq --no-install-recommends \
+    wait-for-it \
+    tzdata \
+    postgresql-client \
+    nodejs \
+    yarn \
+    sudo \
+  && apt-get clean \
+  && rm -rf /var/cache/apt/archives/* \
+  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
+  && truncate -s 0 /var/log/*log
+
+RUN ln -sf /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
+RUN echo "America/Sao_Paulo" > /etc/timezone && dpkg-reconfigure -f noninteractive tzdata
+
+# I am guessing that uid and gid 1000 are common for linux users...
+ARG GID=1000
+ARG UID=1000
+
+# Entrypoint configuration
+COPY entrypoint.sh /usr/bin/entrypoint.sh
+RUN chmod +x /usr/bin/entrypoint.sh
+ENTRYPOINT [ "docker/entrypoint.sh" ]
+CMD [ "bash" ]
+
+# adds the group
+RUN groupadd -g $GID developer && \
+    # creates the user named developer with the right UID and GID
+    useradd -g $GID -u $UID -m developer -s /bin/bash && \
+    # allow the developer user use sudo without a password
+    echo "developer ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+
+# all the RUN commands will be run with this user, also sets the default user
+USER developer
+
+# Create a directory for the app code
+RUN mkdir -p /home/developer/app
+
+# To keep the dependencies
+RUN mkdir -p /home/developer/bundle
+
+# Some hackery here...
+COPY --chown=developer:developer docker/.bashrc /home/developer/.bashrc
+
+WORKDIR /home/developer/app
